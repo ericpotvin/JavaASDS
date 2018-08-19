@@ -213,4 +213,30 @@ public class BinaryTree {
         }
         return 1 + getSize(root.getLeft()) + getSize(root.getRight());
     }
+
+    /**
+     * Check if the tree is BST
+     * @return boolean
+     */
+    public boolean isBst() {
+        return isBst(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
+
+    /**
+     * Check if the tree is BST
+     * @param root The root of the tree
+     * @param minValue The minimal value
+     * @param maxValue The maximal value
+     * @return boolean
+     */
+    private boolean isBst(BinaryNode root, int minValue, int maxValue) {
+        if (root == null) {
+            return true;
+        }
+        if (root.getValue() < minValue || root.getValue() > maxValue) {
+            return false;
+        }
+        return (isBst(root.getLeft(), minValue, root.getValue() - 1) &&
+                isBst(root.getRight(), root.getValue() +  1, maxValue));
+    }
 }

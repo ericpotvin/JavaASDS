@@ -1,7 +1,9 @@
 package datastructure.tree;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * Traversal class
@@ -47,6 +49,26 @@ public class Traversal {
      */
     public static Traversal create(BinaryTree binaryTree) {
         return new Traversal(binaryTree.getRoot());
+    }
+
+    /**
+     * Breadth first traversal or Level order traversal using Queue
+     */
+    public void bfs() {
+        reset();
+        Queue<BinaryNode> queue = new LinkedList<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            BinaryNode current = queue.poll();
+            values.add(current.getValue());
+            if (current.getLeft() != null) {
+                queue.add(current.getLeft());
+            }
+            if (current.getRight() != null) {
+                queue.add(current.getRight());
+            }
+        }
     }
 
     /**

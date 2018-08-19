@@ -20,12 +20,22 @@ class TraversalTest {
      */
     private BinaryTree bt = BinaryTree.create(5, 3, 7, 1, 4);
 
-    /**
-     * Output should be:
-     */
+    @Test
+    void bfs() {
+        Traversal traversal = Traversal.create(bt);
+        traversal.bfs();
+        List<Object> list = traversal.getValues();
+
+        // should equal to: 5, 3, 7, 1, 4
+        assertEquals(5, (int) list.get(0));
+        assertEquals(3, (int) list.get(1));
+        assertEquals(7, (int) list.get(2));
+        assertEquals(1, (int) list.get(3));
+        assertEquals(4, (int) list.get(4));
+    }
+
     @Test
     void inOrder() {
-
         Traversal traversal = Traversal.create(bt);
         traversal.inOrder();
         List<Object> list = traversal.getValues();

@@ -47,4 +47,18 @@ class BinaryTreeTest {
         BinaryTree bt = BinaryTree.create(5, 2, 1, 9, 10);
         assertEquals(5, bt.diameter());
     }
+
+    @Test
+    void isBst() {
+        BinaryTree tree = BinaryTree.create();
+        tree.add(5);
+        tree.add(3);
+        tree.add(8);
+
+        assertTrue(tree.isBst());
+
+        tree.add(1);
+        tree.add(10);
+        assertTrue(tree.isBst());
+    }
 }
