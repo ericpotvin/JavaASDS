@@ -1,5 +1,7 @@
 package exercices.strings;
 
+import static lib.StringUtils.isNumericChar;
+
 /**
  * String To Integer (atoi)
  */
@@ -33,15 +35,6 @@ public class StringToInteger {
         }
 
         return multiplier * result;
-    }
-
-    /**
-     * Check if the char is numeric
-     * @param character The character
-     * @return boolean
-     */
-    private static boolean isNumericChar(char character) {
-        return character >= '0' && character <= '9';
     }
 
     /**

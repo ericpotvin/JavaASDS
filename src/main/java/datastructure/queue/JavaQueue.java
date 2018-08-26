@@ -72,7 +72,7 @@ public class JavaQueue {
      * @return int
      */
     public Object exists(Object node) {
-        return queue.peek();
+        return queue.peek() == node;
     }
 
     /**

@@ -18,4 +18,23 @@ public class StringUtils {
     public static String repeat(String text, int factor) {
         return new String(new char[factor]).replace("\0", text);
     }
+
+    /**
+     * Check if the char is numeric
+     * @param character The character
+     * @return boolean
+     */
+    public static boolean isNumericChar(char character) {
+        return character >= '0' && character <= '9';
+    }
+
+    /**
+     * Check if the char is a letter (a-z or A-Z)
+     * @param character The character
+     * @return boolean
+     */
+    public static boolean isLetterChar(char character) {
+        return (character >= 'A' && character <= 'Z') ||
+                (character >= 'a' && character <= 'z');
+    }
 }
