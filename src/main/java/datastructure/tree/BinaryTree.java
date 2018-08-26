@@ -33,7 +33,7 @@ public class BinaryTree {
      *
      * @param values The values to add
      */
-    BinaryTree(int... values) {
+    private BinaryTree(int... values) {
         root = null;
         for (int value : values) {
             add(value);
@@ -41,10 +41,10 @@ public class BinaryTree {
     }
 
     /**
-     * Create a new LinkedList
+     * Create a new BinaryTree
      *
      * @param values The values to add
-     * @return LinkedList
+     * @return BinaryTree
      */
     public static BinaryTree create(int... values) {
         return new BinaryTree(values);

@@ -28,6 +28,15 @@ public class Traversal {
     }
 
     /**
+     * Create the instance
+     * @param binaryTree The binary tree
+     * @return Traversal
+     */
+    public static Traversal create(BinaryTree binaryTree) {
+        return new Traversal(binaryTree.getRoot());
+    }
+
+    /**
      * Reset the list
      */
     private void reset() {
@@ -40,15 +49,6 @@ public class Traversal {
      */
     public List<Object> getValues() {
         return values;
-    }
-
-    /**
-     * Create the instance
-     * @param binaryTree The binary tree
-     * @return Traversal
-     */
-    public static Traversal create(BinaryTree binaryTree) {
-        return new Traversal(binaryTree.getRoot());
     }
 
     /**
